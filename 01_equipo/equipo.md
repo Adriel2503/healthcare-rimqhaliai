@@ -21,7 +21,7 @@
 
 ## Nombre del equipo
 
-**[Nombre de tu equipo]**
+**Rimqhali.ai**
 
 
 ---
@@ -35,7 +35,25 @@
 
 **Tu respuesta:**
 
-[Escribe aquí tu propuesta]
+El plan principal consiste en desarrollar Rimqhali.ai, un Agente Virtual de Salud con Inteligencia Artificial diseñado como un compañero digital y orquestador proactivo de servicios de bienestar, estructurado en seis módulos clave:
+
+Módulo A: Asistente de Triaje + Gestión de Beneficios
+Funcionalidad: Clasificación conversacional de síntomas por nivel de urgencia, con priorización de citas (presencial/virtual) y gestión de beneficios; además, permite priorizar el agendamiento con doctores mejor calificados según la atención previa.
+
+Módulo B: Seguimiento y Adherencia a Tratamientos
+Funcionalidad: Registro de tratamientos y envío de recordatorios personalizados (app/WhatsApp/SMS), aplicando gamificación y generando alertas médicas ante un alto riesgo de no adherencia.
+
+Módulo C: Panel para Personal Médico / Call Center
+Funcionalidad: Vista única para el personal de salud con el resumen consolidado del historial del paciente y todas las alertas priorizadas generadas por el sistema.
+
+Módulo D: Índice de Bienestar + Sentimiento
+Funcionalidad: Análisis continuo del sentimiento del usuario para calcular un Índice de Bienestar (0-100) y ofrecer recomendaciones de salud accionables y contextualizadas.
+
+Módulo E: Modo Emergencia RIMAC
+Funcionalidad: Botón o activación por voz que dispara una alerta inmediata a la central con datos del asegurado, ubicación GPS y resumen de síntomas para una respuesta coordinada.
+
+Módulo F: Modo Familia / Cuidador
+Funcionalidad: Implementación de una "Vista de Modo Familia" dentro de la app donde el asegurado principal puede conectar y agregar familiares (asegurados o no asegurados, estos últimos solo con credenciales de visor). Este modo permite que los familiares/cuidadores vean un resumen detallado del paciente, incluyendo el progreso de tratamientos, el estado de sus citas, notas clave del doctor y exámenes médicos, facilitando el seguimiento integral.
 
 ---
 
@@ -48,7 +66,24 @@
 
 **Tu respuesta:**
 
-[Escribe aquí los retos que visualizas]
+Los principales riesgos de nuestro asistente virtual de salud para Rímac se concentran en datos, clínica, integración vía MCP y operación.
+
+**1. Gobernanza y privacidad de datos de salud (PHI).** Existe riesgo de uso inadecuado de datos sensibles, falta de consentimiento explícito y almacenamiento inseguro. Nuestro sistema multiagente consultará información del cliente, por lo que debemos limitar estrictamente qué datos se usan para personalizar recomendaciones y cómo se registran las conversaciones en la app.
+
+**2. Riesgos en la capa de integración MCP (API Hub).** MCP será la “puerta de entrada” a los sistemas de Rímac. Publicaremos APIs que la IA consumirá y otras que seguirán usándose de forma tradicional (app, web, call center). Hay riesgo de:
+
+* Sobre-permisos en las APIs que usa la IA.
+* Falta de separación clara entre APIs “para IA” y APIs “normales”.
+* Inconsistencias de negocio si distintas capas consumen versiones diferentes.
+
+Esto exige una gobernanza de APIs clara: scopes específicos para el agente, control de acceso por cliente, versionado y monitoreo de consumo.
+
+**3. Riesgo médico-legal por exceder el rol asistencial.** El asistente no debe prescribir ni ajustar medicación. Su alcance se limitará a triaje básico (a qué especialidad ir), recomendación de centros cercanos, gestión de citas y recordatorios. Si el modelo comenzara a dar indicaciones clínicas concretas, podría considerarse acto médico y generar responsabilidad legal.
+
+**4. Alucinaciones y sesgos en recomendaciones.** La IA podría inventar coberturas/beneficios o favorecer ciertos centros sin criterios transparentes, afectando confianza y percepción de equidad.
+
+**5. Disponibilidad y observabilidad.** Fallas o latencias altas en horas pico afectarían la experiencia del cliente. Sin métricas en tiempo real (uso, errores, desvíos en triaje, escalamiento a humano) se dificulta detectar incidentes, medir impacto en prevención y mejorar el comportamiento del agente de forma continua.
+
 
 ---
 
@@ -56,25 +91,29 @@
 
 Lista las principales tecnologías, frameworks y herramientas que planean utilizar:
 
-**Frontend:**
-- [Ejemplo: Next.js, Tailwind CSS, shadcn/ui]
+*Frontend:*
+- React Nativa
 
-**Backend:**
-- [Ejemplo: FastAPI, PostgreSQL, Redis]
+*Backend:*
+- Node JS, Express js
 
-**IA/ML:**
-- [Ejemplo: OpenAI API, LangChain, Scikit-learn]
+*IA/ML:*
+- OpenAI, Gemini PRO 3, Claude
 
-**Cloud/DevOps:**
-- [Ejemplo: AWS Lambda, S3, API Gateway, Docker]
+*Cloud/DevOps:*
+- AWS EC2, Lambda, SageMaker
 
-**Otras:**
-- [Ejemplo: Selenium para scraping, Pandas para ETL]
+*Otras:*
+- Expo Go, LangChain, RAG, Typescript, SCSS, TaildWindCSS, Docker, N8N
 
 ---
 
 ## Notas adicionales
 
-Espacio libre para cualquier información relevante sobre el equipo (experiencia previa, motivación, proyectos similares realizados, etc.).
+Nuestra motivación para participar en esta Hackathon y crear Rimqhali.ai surge de una experiencia personal profunda de una integrante del equipo: la pérdida de un familiar debido a la desinformación en el hogar sobre citas y síntomas, y la minimización de problemas de salud. Buscamos evitar que otras familias pasen por ese dolor, por lo que diseñamos un sistema que garantiza la transparencia y la proactividad. Funcionalidades como el Triaje conversacional y el Modo Familia/Cuidador no son solo tecnología, sino herramientas esenciales para que todos estén plenamente informados, elevando la salud de la gestión individual a una responsabilidad familiar.
 
-[Escribe aquí cualquier información adicional]
+*Experiencia del equipo:*
+- Benjamin fue a programar a Suiza
+- Ariel trabajó en una consulting de España
+- Brigitte fundó una startup
+- Harold, experto en anáslisis de Datos 
